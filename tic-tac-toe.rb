@@ -4,3 +4,11 @@ class Person
     @name = name
   end
 end
+
+class Player < Person
+  attr_reader :sign
+  def initialize(name, sign)
+    super(name)
+    @sign = sign
+  end
+end
