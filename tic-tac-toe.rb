@@ -19,8 +19,19 @@ class Player < Person
   end
 end
 
-class Board
-  def initialize
-    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+# set and display board
+board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+]
+
+def display_board(board)
+  board.each do |row|
+    puts "-" * 10
+    puts "| #{row.join("| ")}|"
   end
+  puts "-" * 10
 end
+
+display_board(board)
