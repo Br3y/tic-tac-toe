@@ -3,3 +3,19 @@ WINNING_COMBINATIONS = [
   [1, 4, 7], [2, 4, 6], [2, 5, 8],
   [3, 4, 5], [6, 7, 8]
 ]
+
+board = [
+  [" ", " ", " "],
+  [" ", " ", " "],
+  [" ", " ", " "]
+]
+
+def display_board(board)
+  puts "-" * 13
+  board.each do |row|
+    puts "| #{row.join(' | ')} |"
+    puts "-" * 13
+  end
+end
+
+display_board(board)
