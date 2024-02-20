@@ -4,21 +4,6 @@ WIN_COMBINATIONS = [
   [3, 4, 5], [6, 7, 8]
 ]
 
-class Person
-  attr_accessor :name
-  def initialize(name)
-    @name = name
-  end
-end
-
-class Player < Person
-  attr_reader :sign
-  def initialize(name, sign)
-    super(name)
-    @sign = sign
-  end
-end
-
 # set and display board
 board = [
   [' ', ' ', ' '],
