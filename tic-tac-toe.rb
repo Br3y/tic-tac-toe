@@ -12,3 +12,9 @@ class Player < Person
     @sign = sign
   end
 end
+
+class Board
+  def initialize
+    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+  end
+end
