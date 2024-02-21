@@ -18,4 +18,11 @@ def display_board(board)
   end
 end
 
-display_board(board)
+player = "X"
+
+loop do
+  display_board(board)
+
+  print "player pick from 1-9: "
+  number = gets.chomp.to_i
+end
