@@ -38,6 +38,8 @@ def update_board(player, number, board)
     board[2][1] = player
   when 9
     board[2][2] = player
+  else
+    puts "Invalid Input. Try Again"
   end
 end
 
