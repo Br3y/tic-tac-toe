@@ -64,10 +64,12 @@ loop do
   
   update_board(player, number, board)
 
-  player_choice[player] << number
+  if number > 0 and number < 10
+    player_choice[player] << number
+  end
 
   check_winner(player, player_choice)
-  
+
   player = (player == "X") ? "O" : "X"
 
 end
