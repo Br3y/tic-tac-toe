@@ -19,24 +19,24 @@ def display_board(board)
 end
 
 def update_board(player, number, board)
-  case number
-  when 1
+  case 
+  when number == 1 && board[0][0] == " "
     board[0][0] = player
-  when 2
+  when number == 2 && board[0][1] == " "
     board[0][1] = player
-  when 3
+  when number == 3 && board[0][2] == " "
     board[0][2] = player
-  when 4
+  when number == 4 && board[1][0] == " "
     board[1][0] = player
-  when 5
+  when number == 5 && board[1][1] == " "
     board[1][1] = player
-  when 6
+  when number == 6 && board[1][2] == " "
     board[1][2] = player
-  when 7
+  when number == 7 && board[2][0] == " "
     board[2][0] = player
-  when 8
+  when number == 8 && board[2][1] == " "
     board[2][1] = player
-  when 9
+  when number == 9 && board[2][2] == " "
     board[2][2] = player
   else
     puts "Invalid Input. Try Again"
