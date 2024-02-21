@@ -44,6 +44,7 @@ def update_board(player, number, board)
 end
 
 def check_winner(player, player_choice)
+  player_choice[player].sort!
   WINNING_COMBINATIONS.each do |combo|
     if player_choice.values.include?(combo)
       puts "player #{player} wins!"
