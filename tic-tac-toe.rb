@@ -18,6 +18,29 @@ def display_board(board)
   end
 end
 
+def update_board(player, number, board)
+  case number
+  when 1
+    board[0][0] = player
+  when 2
+    board[0][1] = player
+  when 3
+    board[0][2] = player
+  when 4
+    board[1][0] = player
+  when 5
+    board[1][1] = player
+  when 6
+    board[1][2] = player
+  when 7
+    board[2][0] = player
+  when 8
+    board[2][1] = player
+  when 9
+    board[2][2] = player
+  end
+end
+
 player = "X"
 
 loop do
@@ -25,4 +48,7 @@ loop do
 
   print "player pick from 1-9: "
   number = gets.chomp.to_i
+  
+  update_board(player, number, board)
+
 end
