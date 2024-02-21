@@ -41,6 +41,15 @@ def update_board(player, number, board)
   end
 end
 
+def check_winner(player, player_choice)
+  WINNING_COMBINATIONS.each do |combo|
+    if player_choice.values.include?(combo)
+      puts "player #{player} wins!"
+      exit
+    end
+  end
+end
+
 player = "X"
 player_choice = {
   "X" => [],
@@ -56,6 +65,9 @@ loop do
   update_board(player, number, board)
 
   player_choice[player] << number
+
+  check_winner(player, player_choice)
+  
   player = (player == "X") ? "O" : "X"
 
 end
