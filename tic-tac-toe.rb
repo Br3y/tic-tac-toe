@@ -55,6 +55,7 @@ loop do
   
   update_board(player, number, board)
 
+  player_choice[player] << number
   player = (player == "X") ? "O" : "X"
 
 end
