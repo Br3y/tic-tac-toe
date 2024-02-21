@@ -42,6 +42,10 @@ def update_board(player, number, board)
 end
 
 player = "X"
+player_choice = {
+  "X" => [],
+  "O" => []
+}
 
 loop do
   display_board(board)
