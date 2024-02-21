@@ -73,6 +73,8 @@ loop do
 
   check_winner(player, player_choice)
 
+  abort "No one win. Draw!" if board.flatten.none? { |cell| cell == " "}
+
   player = (player == "X") ? "O" : "X"
 
 end
