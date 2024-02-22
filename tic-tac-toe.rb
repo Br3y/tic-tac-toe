@@ -70,16 +70,11 @@ loop do
   print "player pick from 1-9: "
   number = gets.chomp.to_i
   
-  update_board(player, number, board)
-
-  if number > 0 and number < 10
+  if update_board(player, number, board)
     player_choice[player] << number
+    check_winner(player, player_choice)
+    abort "No one win. Draw!" if board.flatten.none? { |cell | cell == " "}
+    player = (player == "X") ? "O" : "X"
   end
-
-  check_winner(player, player_choice)
-
-  abort "No one win. Draw!" if board.flatten.none? { |cell| cell == " "}
-
-  player = (player == "X") ? "O" : "X"
 
 end
