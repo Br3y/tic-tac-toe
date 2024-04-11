@@ -22,4 +22,12 @@ class TicTacToe
       "O" => []
     }
   end
+
+  def display_board
+    puts "-" * 13
+    @board.each do |row|
+      puts "| #{row.join(' | ')} |"
+      puts "-" * 13
+    end
+  end
 end
