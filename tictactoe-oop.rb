@@ -49,4 +49,15 @@ class TicTacToe
       return false
     end
   end
+
+  def check_winner
+    @player_choice[@player].sort!
+    WINNING_COMBINATIONS.each do |combo|
+      if @player_choice.values.include?(combo)
+        puts "player #{@player} wins!"
+        exit
+      end
+    end
+  end
+
 end
