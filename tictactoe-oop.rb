@@ -60,4 +60,18 @@ class TicTacToe
     end
   end
 
+  def play
+    loop do 
+      display_board
+
+      print "Player #{@player} pick from 1-9: "
+      number = gets.chomp.to_i
+      
+      if update_board(number)
+        check_winner
+        abort "No one wins. Draw!" if @board.flatten.none? { |cell| cell == " "}
+        @player = (@player == "X") ? "O" : "X"
+      end
+    end
+  end
 end
