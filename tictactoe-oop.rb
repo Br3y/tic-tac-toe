@@ -30,4 +30,23 @@ class TicTacToe
       puts "-" * 13
     end
   end
+
+  def update_board(number)
+    case number
+    when 1..9
+      row = (number - 1) / 3
+      col = (number - 1) % 3
+      if @board[row][col] == " "
+        @board[row][col] = @player
+        @player_choice[@player] << number
+        return true
+      else
+        puts "Invalid Input. Try Again"
+        return false
+      end
+    else
+      puts "Invalid Input. Try Again"
+      return false
+    end
+  end
 end
