@@ -8,7 +8,7 @@ class TicTacToe
     [4, 5, 8, 9], [6, 7, 8, 9],
     [1, 2, 3, 4, 5], [1, 6, 7, 8, 9], [2, 4, 5, 6, 8],
     [1, 2, 4, 5, 7], [1, 2, 6, 8, 9]
-  ]
+  ].freeze
 
   def initialize
     @board = [
@@ -39,21 +39,21 @@ class TicTacToe
       if @board[row][col] == " "
         @board[row][col] = @player
         @player_choice[@player] << number
-        return true
+        true
       else
         puts "Invalid Input. Try Again"
-        return false
+        false
       end
     else
       puts "Invalid Input. Try Again"
-      return false
+      false
     end
   end
 
   def check_winner
     @player_choice[@player].sort!
     WINNING_COMBINATIONS.each do |combo|
-      if @player_choice.values.include?(combo)
+      if @player_choice.value?(combo)
         puts "player #{@player} wins!"
         exit
       end
@@ -61,17 +61,17 @@ class TicTacToe
   end
 
   def play
-    loop do 
+    loop do
       display_board
 
       print "Player #{@player} pick from 1-9: "
       number = gets.chomp.to_i
-      
-      if update_board(number)
-        check_winner
-        abort "No one wins. Draw!" if @board.flatten.none? { |cell| cell == " "}
-        @player = (@player == "X") ? "O" : "X"
-      end
+
+      next unless update_board(number)
+
+      check_winner
+      abort "No one wins. Draw!" if @board.flatten.none?(" ")
+      @player = @player == "X" ? "O" : "X"
     end
   end
 end
